@@ -3,11 +3,16 @@ package br.com.alura.screenmatch.model;
 import br.com.alura.screenmatch.service.ConsultaMyMemory;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.OptionalDouble;
 
 @Entity
 @Table(name = "series")
 public class Serie {
+
+    public Serie(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +27,17 @@ public class Serie {
     private String atores;
     private String poster;
     private String sinopse;
+
+    @OneToMany(mappedBy = "serie")
+    private List<Episodio> episodio = new ArrayList<>();
+
+    public List<Episodio> getEpisodio() {
+        return episodio;
+    }
+
+    public void setEpisodio(List<Episodio> episodio) {
+        this.episodio = episodio;
+    }
 
     public Long getId() {
         return id;

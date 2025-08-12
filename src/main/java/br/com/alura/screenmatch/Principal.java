@@ -26,8 +26,8 @@ public class Principal {
     private ConsumoAPI consumo = new ConsumoAPI();
     ConverteDados conversor = new ConverteDados();
 
-    private final String ENDERECO = "https://www.omdbapi.com/?t=";
-    private final String API_KEY = "&apikey=24b62a63";
+    private final String ENDERECO = "https://www.omdbapi.com/?t=";//ENDERECOOMDB
+    private final String API_KEY = "&apikey=24b62a63";//APIKEYOMDB
     private List<DadosSerie> dadosSeries = new ArrayList<>();
     public void exibMenu() {
         var opcao = -1;
